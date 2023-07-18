@@ -25,7 +25,42 @@
     </header>
     <main>
         <form id="my-form" action="">
+            <div class="name-wrapper">
+                <div class="input-wrapper">
+                    <label for="first-name">Nome</label>
+                    <input type="text" id="first-name" required>
+                </div>
 
+                <div class="input-wrapper">
+                    <label for="last-name">Sobrenome</label>
+                    <input type="text" id="last-name" required>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="email">Email <span>(digite um email válido)</span></label>
+                <input type="email" id="email" required>
+            </div>
+
+            <fieldset>
+                <div class="fieldset-wrapper">
+                    <legend>Informações do mentor</legend>
+
+                    <div class="input-wrapper">
+                        <label for="mentor">Selecione quem foi o seu mentor</label>
+                        <select id="mentor">
+                            <option value="mentor1">Mentor 1</option>
+                            <option value="mentor2">Mentor 2</option>
+                            <option value="mentor3">Mentor 3</option>
+                        </select>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="feedback">Feedback sobre o mentor</label>
+                        <textarea id="feedback"></textarea>
+                    </div>
+                </div>
+            </fieldset>
         </form>
     </main>
 </body>
