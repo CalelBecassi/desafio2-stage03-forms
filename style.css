@@ -36,26 +36,31 @@ header .text-header {
 
 header h1,
 header p,
-header .header-form {
+header .header-form,
+form #button {
     color: #FFF;
     font-weight: 400;
 }
 
-header h1 {
+header h1,
+header .header-form,
+legend,
+form #button {
     font-family: Staatliches;
+}
+
+header h1 {
     font-size: 36px;
 }
 
 header p {
     height: 46px;
-
     font-family: Poppins;
     font-size: 16px;
 }
 
 header .header-form,
 legend {
-    font-family: Staatliches;
     font-size: 24px;
     line-height: 34px;
 }
@@ -85,6 +90,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 28px;
+
+    margin-bottom: 100px;
 }
 
 .name-wrapper {
@@ -93,13 +100,15 @@ form {
     gap: 22px;
 }
 
-.name-wrapper input {
+.name-wrapper input,
+.input-wrapper select {
     width: 300px;
 }
 
 .input-wrapper {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .input-wrapper label {
@@ -112,6 +121,7 @@ form {
     color: #C1BCCC;
     font-size: 12px;
     line-height: 20px;
+    margin-left: 9px;
 }
 
 .input-wrapper input,
@@ -152,7 +162,12 @@ legend {
 }
 
 .input-wrapper select {
-    width: 300px;
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7' fill='none'%3E%3Cpath d='M1 1.64984L5 5.61617L9 1.64984' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 24px top 50%;
 }
 
 .input-wrapper textarea {
@@ -164,9 +179,76 @@ legend {
     flex-direction: row;
     align-items: center;
     gap: 8px;
+    position: relative;
 }
 
 .input-wrapper.checkbox input {
     width: 24px;
     height: 24px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+}
+
+.input-wrapper.checkbox label:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-color: #FAFAFC;
+    border-radius: 8px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid #E6E6F0;
+}
+
+.input-wrapper.checkbox input:checked+label:before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1802_14)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1802_14'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.input-wrapper.input-wrapper.checkbox input:focus+label:before {
+    outline: 2px solid black;
+}
+
+.date-wrapper,
+.hour-wrapper {
+    display: flex;
+}
+
+.date-wrapper {
+    gap: 32px;
+}
+
+.hour-wrapper {
+    gap: 10px;
+}
+
+.hour-wrapper input {
+    width: 140px;
+}
+
+.date-wrapper #date {
+    width: 300px;
+}
+
+form #button {
+    width: 620px;
+    height: 50px;
+    border: none;
+
+    border-radius: 8px;
+    background: #F67669;
+
+    font-size: 20px;
+    line-height: 26px;
+
+    margin-top: 30px;
+}
+
+form #button:hover {
+    background: #ee6353;
+    cursor: pointer;
 }
